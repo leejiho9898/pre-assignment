@@ -2,32 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 import { AiFillFacebook } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import useLogin from '../hooks/useLogin';
-import Input from '../component/common/Input';
 const LoginPage = () => {
-  const { authData, onChangeAuth, onLogin } = useLogin();
-  const { email, pw } = authData;
   return (
     <LoginLayout>
       <ElementBox>
         <Logo src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" />
         <FlexColumn>
-          <Input
+          <InputStyled
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
-            name="email"
-            onChange={onChangeAuth}
-            value={email}
           />
-          <Input
-            type="password"
-            placeholder="비밀번호"
-            name="pw"
-            onChange={onChangeAuth}
-            value={pw}
-          />
+          <InputStyled type="password" placeholder="비밀번호" />
         </FlexColumn>
-        <LoginBtn type="button" value="로그인" onClick={onLogin} />
+        <LoginBtn type="button" value="로그인" />
         <FlexBox>
           <HalfHr />
           <CloudyString>또는</CloudyString>
@@ -67,6 +54,15 @@ const ElementBox = styled.div`
 const Logo = styled.img`
   padding: 30px;
 `;
+const InputStyled = styled.input`
+  height: 35px;
+  width: 250px;
+  background-color: #fafafa;
+  border: 1px solid #e5e5e5;
+  padding: 6px 0 2px 8px;
+  margin: 2px;
+  font-size: 12px;
+`;
 
 const LoginBtn = styled.input`
   width: 250px;
@@ -76,7 +72,6 @@ const LoginBtn = styled.input`
   background-color: #0095f6;
   color: #ffff;
   border-radius: 4px;
-  cursor: pointer;
 `;
 
 const FlexColumn = styled.div`
