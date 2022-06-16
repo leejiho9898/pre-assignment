@@ -12,13 +12,22 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {   
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
     "quotes": ["error", "single", { "avoidEscape": true }],
-    "max-len": [2, 120, {
-      "ignoreStrings": true,
-      "ignoreComments": true
-    }    
-  ],
-  "react/prop-types":0
-}
+    "max-len": [
+      2,
+      120,
+      {
+        "ignoreStrings": true,
+        "ignoreComments": true
+      }
+    ],
+
+    "react/prop-types": 0
+  }
 }
