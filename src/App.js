@@ -1,8 +1,18 @@
 import React from 'react';
-import PreAssignmentGuide from './pages/PreAssignmentGuide';
+import styled from 'styled-components';
+import Routing from './router/route';
 
 function App() {
-  return <PreAssignmentGuide />;
+  return (
+    <Applayout>
+      <Routing />
+    </Applayout>
+  );
 }
+
+const Applayout = styled.div`
+  background-color: #fafafa;
+  height: 100vh;
+`;
 
 export default App;
