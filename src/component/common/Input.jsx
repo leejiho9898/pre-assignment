@@ -1,40 +1,58 @@
-import React, { useEffect, useRef } from 'react';
+import React, { forwardRef, useEffect, memo } from 'react';
 import styled, { css } from 'styled-components';
 
-function Input({
-  height = '35px',
-  width = '250px',
-  isFocus = false,
-  validated,
-  ...rest
-}) {
-  return (
-    <InputStyled
-      height={height}
-      width={width}
-      isFocus={isFocus}
-      validated={validated}
-      {...rest}
-    />
-  );
-}
+export const Input = memo(
+  forwardRef(
+    (
+      {
+        height = '35px',
+        width = '250px',
+        validated,
+        variant = 'primary',
+        ...rest
+      },
+      ref
+    ) => {
+      return (
+        <InputStyled
+          height={height}
+          width={width}
+          ref={ref}
+          validated={validated}
+          variant={variant}
+          {...rest}
+        />
+      );
+    }
+  )
+);
+
+Input.displayName = 'Input';
 
 const InputStyled = styled.input`
-  width: ${({ width }) => width};
   height: ${({ height }) => height};
-  background-color: #fafafa;
-  padding: 6px 0 2px 8px;
+  width: ${({ width }) => width};
   margin: 2px;
   font-size: 12px;
   border-radius: 5px;
-  ${({ validated }) =>
-    validated
+  border: ${({ validated }) =>
+    validated ? '1px solid #e5e5e5;' : '2px solid #ff8d8d;'};
+  ${({ variant }) =>
+    variant === 'primary'
       ? css`
-          border: 1px solid #e5e5e5;
+          padding: 6px 0 2px 8px;
+          background-color: #fafafa;
         `
-      : css`
-          border: 2px solid #ff8d8d;
-        `};
+      : variant === 'secondary'
+      ? css`
+          max-width: 250px;
+          padding: 6px 0 2px 34px;
+          background-color: #eaeaea;
+          border: none;
+          max-width: 250px;
+          ::placeholder {
+            color: #8d8d8d;
+          }
+        `
+      : null}
 `;
-
-export default React.memo(Input);
