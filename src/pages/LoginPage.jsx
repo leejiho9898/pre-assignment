@@ -1,13 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import useLogin from '../hooks/useLogin';
-import Input from '../component/common/Input';
+import useLogin from '../hooks/useAuth';
+import { Input } from '../component/common/Input';
 import RegisterBox, { RegisterString } from '../component/login/RegisterBox';
 import SubLoginBox from '../component/login/SubLoginBox';
-import { FlexBox, FlexColumn } from '../styles/commomComponents';
+import { FlexColumn } from '../styles/commomComponents';
 const LoginPage = () => {
-  const { authData, onChangeAuth, onLogin, isValidated } = useLogin();
-  const { email, pw } = authData;
+  const {
+    emailRef,
+    passwordRef,
+    onLogin,
+    isValidated,
+    onCheckEmail,
+    onCheckPw,
+  } = useLogin();
+
   return (
     <LoginLayout>
       <ElementBox>
@@ -17,16 +24,16 @@ const LoginPage = () => {
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             name="email"
-            onChange={onChangeAuth}
-            value={email}
+            ref={emailRef}
+            onChange={onCheckEmail}
             validated={isValidated.email}
           />
           <Input
             type="password"
             placeholder="비밀번호"
             name="pw"
-            onChange={onChangeAuth}
-            value={pw}
+            ref={passwordRef}
+            onChange={onCheckPw}
             validated={isValidated.pw}
           />
         </FlexColumn>
@@ -35,7 +42,10 @@ const LoginPage = () => {
           value="로그인"
           onClick={onLogin}
           disabled={
-            !isValidated.email || !isValidated.pw || email === '' || pw === ''
+            !isValidated.email ||
+            !isValidated.pw ||
+            !emailRef?.current?.value.length ||
+            !passwordRef?.current?.value.length
           }
         />
         <SubLoginBox />
