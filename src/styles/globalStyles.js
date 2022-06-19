@@ -17,6 +17,12 @@ const GlobalStyles = createGlobalStyle`
    outline:none;
    border:none;
  }
+ a{
+  text-decoration: none;
+  &:visited{
+    color: transparent;
+  }
+ }
 `;
 
 export default GlobalStyles;
