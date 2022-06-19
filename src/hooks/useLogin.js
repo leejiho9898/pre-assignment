@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import userStorage from '../libs/utils/userStorage';
 import useValidation from './useValidation';
 
-export default function useAuth() {
+export default function useLogin() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const nvaigate = useNavigate();

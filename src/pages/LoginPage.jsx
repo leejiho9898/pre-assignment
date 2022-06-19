@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import useLogin from '../hooks/useAuth';
+import useLogin from '../hooks/useLogin';
 import { Input } from '../component/common/Input';
 import RegisterBox, { RegisterString } from '../component/login/RegisterBox';
 import SubLoginBox from '../component/login/SubLoginBox';
