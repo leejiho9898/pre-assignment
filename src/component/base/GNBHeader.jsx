@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { AiFillHome, AiOutlineHeart } from 'react-icons/ai';
-import { FiSend } from 'react-icons/fi';
-import { FaRegUserCircle } from 'react-icons/fa';
-import { BsPlusSquare, BsSearch } from 'react-icons/bs';
 import { Input } from '../common/Input';
 import { FlexBox } from '../../styles/commomComponents';
 import { Link, Outlet } from 'react-router-dom';
 import media from '../../styles/media';
-import UserIcon from '../common/UserIcon';
-
-const ICOM_ITEMS = [
-  { name: 'home', href: '/feed', icon: <AiFillHome size={20} /> },
-  { name: 'send', href: '/feed', icon: <FiSend size={20} /> },
-  { name: 'plus', href: '/feed', icon: <BsPlusSquare size={20} /> },
-  { name: 'like', href: '/feed', icon: <AiOutlineHeart size={20} /> },
-  { name: 'user', href: '/feed', icon: <UserIcon /> },
-];
+import { BsSearch } from 'react-icons/bs';
 
 const GNBHeader = () => {
-
-
   return (
     <>
       <Header>

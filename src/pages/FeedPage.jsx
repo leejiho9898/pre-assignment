@@ -3,19 +3,11 @@ import styled from 'styled-components';
 import GNBHeader from '../component/base/GNBHeader';
 import useFeedLoad from '../hooks/useFeedLoad';
 import { FlexBox } from '../styles/commomComponents';
-import { HiOutlineUserCircle } from 'react-icons/hi';
-import { FiMoreHorizontal, FiSave, FiSend } from 'react-icons/fi';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { GiNothingToSay } from 'react-icons/gi';
+import { FiMoreHorizontal, FiSave } from 'react-icons/fi';
+import { COMMENT_ICONS } from '../libs/constans';
 
-const COMMENT_ICONS = [
-  { icon: <AiOutlineHeart size={24} /> },
-  { icon: <GiNothingToSay size={24} /> },
-  { icon: <FiSend size={24} /> },
-];
 const FeedPage = () => {
   const { feeds } = useFeedLoad();
-  console.log(feeds[0]);
   return (
     <FeedsWrapper>
       {feeds?.map(({ id, userName, img, likes, comments }, index) => (
@@ -119,5 +111,6 @@ const LikeCount = styled.p`
 const CommentList = styled.div`
   display: flex;
   font-size: 14px;
+  align-items: center;
 `;
 export default FeedPage;
