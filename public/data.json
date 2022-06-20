@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "userName": "Leejiho1",
+      "img": "https://source.unsplash.com/random/600x500",
+      "likes": 0,
+      "comments": [
+        {
+          "userName": "Leejiho2",
+          "text": "안녕하세요?"
+        },
+        {
+          "userName": "Leejiho3",
+          "text": "안녕하세요? 저는 이지호라고 합니다. 만나서 반갑습니다."
+        }
+      ]
+    },
+    {
+      "userName": "Leejiho1",
+      "img": "https://source.unsplash.com/random/900x500",
+      "likes": 0,
+      "comments": [
+        {
+          "userName": "Leejiho2",
+          "text": "옷이 정말 멋지십니다."
+        },
+        {
+          "userName": "Leejiho3",
+          "text": "썬글라스가 대박입니다."
+        }
+      ]
+    },
+    {
+      "userName": "Leejiho1",
+      "img": "https://source.unsplash.com/random/700x1080",
+      "likes": 0,
+      "comments": [
+        {
+          "userName": "Leejiho2",
+          "text": "어디인가요?"
+        },
+        {
+          "userName": "Leejiho3",
+          "text": "날씨가 덥네요."
+        }
+      ]
+    }
+  ]
+}
