@@ -37,6 +37,8 @@ const Logo = styled.img`
   height: 30px;
 `;
 const Header = styled.header`
+  position: sticky;
+  top: 0;
   width: 100%;
   display: flex;
   align-items: center;
