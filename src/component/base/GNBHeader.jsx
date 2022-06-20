@@ -5,6 +5,7 @@ import { FlexBox } from '../../styles/commomComponents';
 import { Link, Outlet } from 'react-router-dom';
 import media from '../../styles/media';
 import { BsSearch } from 'react-icons/bs';
+import { ICON_ITEMS } from '../../libs/constans';
 
 const GNBHeader = () => {
   return (
@@ -20,7 +21,7 @@ const GNBHeader = () => {
           />
         </SearchBox>
         <IconBox>
-          {ICOM_ITEMS.map(({ name, href, icon }) => (
+          {ICON_ITEMS.map(({ name, href, icon }) => (
             <Link to={href} key={name}>
               {icon}
             </Link>

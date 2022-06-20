@@ -12,7 +12,7 @@ function App() {
 
 const Applayout = styled.div`
   background-color: #fafafa;
-  height: 100vh;
+  height: 100%;
 `;
 
 export default App;
