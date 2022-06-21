@@ -75,7 +75,7 @@ const CommentSummitBtn = styled.input`
   width: 32px;
   font-weight: bold;
   color: #6495ed;
-  background-color: in;
+  background-color: inherit;
   cursor: pointer;
 `;
 const CommentPostBox = styled.form`
