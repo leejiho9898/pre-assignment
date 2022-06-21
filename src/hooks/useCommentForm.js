@@ -17,6 +17,7 @@ function useCommentForm(initailCommentList) {
 
   const onSummitComment = (e) => {
     e.preventDefault();
+    if (nowComment.text === '') return;
     setCommentList([...commentList, nowComment]);
     setNowComment({
       id: '',
