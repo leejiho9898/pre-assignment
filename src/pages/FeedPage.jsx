@@ -5,7 +5,6 @@ import useFeedLoad from '../hooks/useFeedLoad';
 import FeedSection from '../component/feed/FeedSection';
 
 const FeedPage = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const { feeds } = useFeedLoad();
   return (
     <FeedsWrapper>

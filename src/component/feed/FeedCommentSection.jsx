@@ -38,12 +38,9 @@ const FeedCommentSection = (props) => {
           name="text"
           onChange={onChangeCommnet}
           value={nowComment.text}
-        />
-        <CommentSummitBtn
-          type="submit"
-          value="게시"
           placeholder="댓글달기..."
         />
+        <CommentSummitBtn type="submit" value="게시" />
       </CommentPostBox>
     </CommentContainer>
   );
@@ -89,7 +86,7 @@ const CommentPostBox = styled.form`
 const CommentInput = styled.input`
   width: 80%;
   ::placeholder {
-    color: #dbdbdb;
+    color: #9e9e9e;
     font-size: 12px;
   }
 `;
