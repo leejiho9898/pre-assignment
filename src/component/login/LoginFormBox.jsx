@@ -14,7 +14,7 @@ const LoginFormBox = () => {
     onCheckPw,
   } = useLogin();
   return (
-    <>
+    <form onSubmit={onLogin}>
       <Logo src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" />
       <FlexColumn>
         <Input
@@ -35,7 +35,7 @@ const LoginFormBox = () => {
         />
       </FlexColumn>
       <LoginBtn
-        type="button"
+        type="submit"
         value="로그인"
         onClick={onLogin}
         disabled={
@@ -45,7 +45,7 @@ const LoginFormBox = () => {
           !passwordRef?.current?.value.length
         }
       />
-    </>
+    </form>
   );
 };
 
