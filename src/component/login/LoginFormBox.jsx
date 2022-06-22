@@ -45,6 +45,7 @@ const LoginFormBox = () => {
           !passwordRef?.current?.value.length
         }
       />
+      <div onClick={onLogin}>asd</div>
     </form>
   );
 };
