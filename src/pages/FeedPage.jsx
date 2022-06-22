@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import useFeedLoad from '../hooks/useFeedLoad';
-
 import FeedSection from '../component/feed/FeedSection';
 
 const FeedPage = () => {

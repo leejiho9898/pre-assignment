@@ -13,10 +13,7 @@ export default function useLogin() {
   const password = passwordRef?.current?.value;
   const [userList, setUserList] = useState([]);
 
-  const { onCheckEmail, onCheckPw, isValidated } = useValidation(
-    email,
-    password
-  );
+  const { onCheckEmail, onCheckPw, isValidated } = useValidation();
 
   useEffect(() => {
     const getData = async () => {

@@ -5,6 +5,7 @@ import { AiFillHome } from 'react-icons/ai';
 import { BsPlusSquare } from 'react-icons/bs';
 import React from 'react';
 import UserIcon from '../component/common/UserIcon';
+import userStorage from './utils/userStorage';
 
 export const COMMENT_ICONS = [
   { icon: <AiOutlineHeart size={24} /> },
@@ -19,3 +20,9 @@ export const ICON_ITEMS = [
   { name: 'like', href: '/feed', icon: <AiOutlineHeart size={20} /> },
   { name: 'user', href: '/feed', icon: <UserIcon /> },
 ];
+
+export const INITIAL_COMMENT_STATE = {
+  id: '',
+  text: '',
+  userName: userStorage.get(),
+};

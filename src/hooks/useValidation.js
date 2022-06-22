@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function useValidation(email, password) {
+function useValidation() {
   const [isValidated, setIsValidated] = useState({
     email: true,
     pw: true,

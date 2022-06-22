@@ -1,13 +1,9 @@
 import { useState } from 'react';
-import userStorage from '../libs/utils/userStorage';
+import { INITIAL_COMMENT_STATE } from '../libs/constans';
 
 function useCommentForm(initailCommentList) {
   const [commentList, setCommentList] = useState(initailCommentList);
-  const [nowComment, setNowComment] = useState({
-    id: '',
-    text: '',
-    userName: userStorage.get(),
-  });
+  const [nowComment, setNowComment] = useState(INITIAL_COMMENT_STATE);
 
   const onChangeCommnet = (e) => {
     const { name, value } = e.target;
@@ -19,11 +15,7 @@ function useCommentForm(initailCommentList) {
     e.preventDefault();
     if (nowComment.text === '') return;
     setCommentList([...commentList, nowComment]);
-    setNowComment({
-      id: '',
-      text: '',
-      userName: userStorage.get(),
-    });
+    setNowComment(INITIAL_COMMENT_STATE);
   };
   return { nowComment, onChangeCommnet, onSummitComment, commentList };
 }
