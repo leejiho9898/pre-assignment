@@ -88,6 +88,5 @@ npm start
   - (아이콘은 자유롭게 사용하셔도 괜찮습니다. icon 라이브러리 설치 O) ✅
   - 메인 Page 전체에 반응형 CSS가 적용 되어있는지 평가합니다. (Media Query 사용) ✅
 
-## 참고 이미지asd
-
+## 참고 이미지
 [참고 이미지 링크](https://bclef25.notion.site/1ed6d5b2192b45eeb4104a67f6a77250)
