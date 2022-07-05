@@ -13,6 +13,13 @@ const LoginFormBox = () => {
     onCheckEmail,
     onCheckPw,
   } = useLogin();
+  
+  const disable =
+    !isValidated.email ||
+    !isValidated.pw ||
+    !emailRef?.current?.value.length ||
+    !passwordRef?.current?.value.length;
+
   return (
     <form onSubmit={onLogin}>
       <Logo src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" />
@@ -38,12 +45,7 @@ const LoginFormBox = () => {
         type="submit"
         value="로그인"
         onClick={onLogin}
-        disabled={
-          !isValidated.email ||
-          !isValidated.pw ||
-          !emailRef?.current?.value.length ||
-          !passwordRef?.current?.value.length
-        }
+        disabled={disable}
       />
       <div onClick={onLogin}>asd</div>
     </form>
