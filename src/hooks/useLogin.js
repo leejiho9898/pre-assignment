@@ -8,7 +8,7 @@ import useValidation from './useValidation';
 export default function useLogin() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
-  const nvaigate = useNavigate();
+  const navigate = useNavigate();
   const email = emailRef?.current?.value;
   const password = passwordRef?.current?.value;
   const [userList, setUserList] = useState([]);
@@ -31,7 +31,7 @@ export default function useLogin() {
       if (result.length !== 0) {
         userStorage.set(email);
       } else throw new Error('등록되지 않은 이메일 또는 비밀번호입니다.');
-      nvaigate('/feed');
+      navigate('/feed');
     } catch (error) {
       alert(error);
     }
